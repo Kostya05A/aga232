@@ -22,9 +22,9 @@ jobs:
     - name: Authenticate to GitHub Package Registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-    - name: Push Docker Image to GitHub Package Registry
-      run: docker tag ${{ github.repository }} ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
-          && docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
+    #- name: Push Docker Image to GitHub Package Registry
+    #  run: docker tag ${{ github.repository }} ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
+     #     && docker push ghcr.io/${{ github.repository_owner }}/${{ github.repository }}:latest
 
   deploy:
     runs-on: ubuntu-latest
