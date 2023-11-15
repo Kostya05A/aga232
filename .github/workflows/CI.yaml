@@ -23,8 +23,8 @@ jobs:
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
     - name: Push Docker Image to GitHub Package Registry
-      run: docker tag kostya05a/aga232 ghcr.io/Kostya05A/aga232:latest
-          && docker push ghcr.io/Kostya05A/aga232:latest
+      run: docker tag kostya05a/aga232 ghcr.io/kostya05a/aga232:latest
+          && docker push ghcr.io/kostya05a/aga232/python-app:latest
 
   deploy:
     runs-on: ubuntu-latest
